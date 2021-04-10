@@ -1,0 +1,27 @@
+
+
+.wrapper {
+    display: flex;
+    overflow-x: scroll;
+    border: 5px solid black;
+    margin: 50px;
+}
+
+.artist-timeline {
+    padding: 70px;
+    flex: 0 0 300px;
+    text-align: center;
+    margin: 20px;
+    background-color: yellow;
+    display:flex;
+    flex-direction: column;
+    font-size: 30px;
+    /* overflow-y: scroll; */
+}
+
+.element {
+    border: 5px solid black;
+    padding: 20px;
+    margin: 10px 0px;
+    
+}
