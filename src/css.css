@@ -1,76 +1,10 @@
-body{
+.nav-item .nav .navbar-nav .navbar-right .top .ml-auto{
+    color: black !important;
+}
+.navbar{
+    background-color: yellow !important;
 }
 
-#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}
-
-.navbar-customclass {
-    background-color: #FFD500;
-}
-/* changing brand text color*/
-.navbar-customclass .navbar-brand,
-.navbar-customclass .navbar-text {
-    color: black;
-}
-/* navigation link text color */
-.navbar-customclass .navbar-nav .nav-link {
-    color: rgba(255,255,255,.6);
-}
-/* navigation links anchor hover and active styles */
-.navbar-customclass .nav-item.active .nav-link,
-.navbar-customclass .nav-item:hover .nav-link {
-    color: #ffffff;
-}
-
-.top{
-
-}
-
-@media(max-width:768px){
-    #login-dp{
-        background-color: inherit;
-        color: #fff;
-    }
-    #login-dp .bottom{
-        background-color: inherit;
-        border-top:0 none;
-    }
+.navbar{
+    background-color: yellow;
 }
