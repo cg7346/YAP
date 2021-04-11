@@ -14,8 +14,9 @@
         function init(){
             document.getElementById("btn_usr").addEventListener("click", function search_bar(e){
             e.preventDefault();
-            x = document.getElementById("sea").innerText
-            window.location = './search.html'
+            x = document.getElementById("sea").value;
+            console.log(x);
+            window.location = './search.html?' + x;
         })};
 
         })(window, document, undefined);
@@ -30,8 +31,8 @@
       <a class="navbar-brand" href="index.html">YAP</a>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form navbar-left" role="search">
-          <div class="form-group" id="sea">
-            <input type="text" class="form-control" placeholder="Search">
+          <div class="form-group" >
+            <input id="sea" type="text" class="form-control" placeholder="Search">
           </div>
           <button id="btn_usr" type="submit" class="btn btn-default" onclick="window.location.replace = 'search.html';">Submit</button>
         </form>
