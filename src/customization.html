@@ -15,16 +15,30 @@
     <title>YAP - Customization</title>
 </head>
 
-<body>
+<body style="background-color: rgb(34, 31, 31); color: white">
 
 <!--Navigation bar-->
-<div id="nav-placeholder">
-    <script>
-        $(function () {
-            $("#nav-placeholder").load("index.html");
-        });
-    </script>
-</div>
+<nav class = "navbar navbar-expand-sm " style="background-color: yellow;">
+    <h3 style="color:black;">YAP</h3>
+
+    <form class = "form-inline">
+        <input class = "form-control mr-sm-2" id="sea" type = "text" placeholder = "Search">
+        <button class = "btn btn-info" type = "submit" id="btn_usr" style="background-color:white; color: black;">Search</button>
+    </form>
+    <ul class = "nav navbar-nav navbar-right top ml-auto" style="color: black;">
+        <li class = "nav-item">
+            <a class = "nav-link" href = "index.html"style="color: black;">Home
+                <span class = "sr-only">(current)</span>
+            </a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "search.html"style="color: black;">Employment</a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "customization.html"style="color: black;">Login</a>
+        </li>
+    </ul>
+</nav>
 <!--end of Navigation bar-->
 
 <div class="row py-5 px-4">
@@ -37,7 +51,7 @@
                             src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
                             alt="..." width="200" class="rounded mb-2 img-thumbnail">
                         <a class="btn btn-outline-dark btn-sm btn-block" data-modal-trigger aria-controls="modal-name"
-                           aria-expanded="false">Edit profile</a>
+                           aria-expanded="false" style="background-color: rgb(34, 31, 31); color: white">Edit profile</a>
                     </div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0">Mark Williams</h4>
@@ -108,7 +122,7 @@
 
 
 <!-- HEADER MODAL -->
-<div id="header-modal">
+<div id="header-modal" style="background-color: rgb(34, 31, 31); color: white">
     <script>
         $(function () {
             $("#header-modal").load("header-customization.html");
@@ -118,7 +132,7 @@
 <!--END OF HEADER MODAL-->
 
 <!-- PROJECTS MODAL -->
-<div id="project-modal">
+<div id="project-modal" style="background-color: rgb(34, 31, 31); color: white">
     <script>
         $(function () {
             $("#project-modal").load("project-customization.html");
@@ -128,7 +142,7 @@
 <!--END OF HEADER MODAL-->
 
 <!-- SETTINGS MODAL -->
-<div id="settings-modal">
+<div id="settings-modal" style="background-color: rgb(34, 31, 31); color: white">
     <script>
         $(function () {
             $("#settings-modal").load("settings-customization.html");
