@@ -220,6 +220,11 @@ body {
     color: #fff;
     background-color:#59b5fa;
 }
+.btn-group-lg>.btn, .btn-lg {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+}
 
 .navbar-customclass {
     background-color: #FFD500;

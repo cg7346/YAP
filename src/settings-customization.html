@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>YAP - Customization</title>
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
@@ -171,38 +170,51 @@
 </head>
 <body>
 <!-- HEADER MODAL -->
-<section class="modal" id="modal-name" data-modal-target>
+<section class="modal" id="modal-settings" data-modal-target>
     <div class="modal__overlay" data-modal-close tabindex="-1"></div>
     <div class="modal__wrapper">
         <div class="modal__header">
             <div class="modal__title">
-                <h1>Edit Portfolio Header</h1>
+                <h1>Portfolio Settings</h1>
             </div>
             <button class="modal__close" data-modal-close aria-label="Close Modal"></button>
         </div>
         <div class="card-body pt-0">
             <div class="row justify-content-center pb-sm-5 pb-3">
                 <div class="col-md-10 col px-md-0 px-4">
+                    <!--         Combo Box Theme          -->
                     <div class="item-wrapper one" style="padding-top: 2rem">
-                        <div class="col">
-                            <input class="form-control" type="text" name="artist-name" placeholder="* Name" required>
+                        <label><h4>* Theme</h4></label>
+                        <div class="col"><select class="form-control" required>
+
+                            <option value="simple">Simple</option>
+                            <option value="pop">Pop</option>
+                            <option value="modern">Modern</option>
+                        </select>
                         </div>
                     </div>
-                    <div class="item-wrapper one">
-                        <div class="col">
-                            <input class="form-control" type="text" name="artist-location" placeholder="* Location"
-                                   required>
+
+                    <!--         Combo Box Font Style          -->
+                    <div class="item-wrapper one" style="padding-top: 2rem">
+                        <label><h4>* Font Style</h4></label>
+                        <div class="col"><select class="form-control" required>
+                            <option value="sans-serif">Sans Serif</option>
+                            <option value="merriweather">Merriweather</option>
+                            <option value="shawdows-into-light">Shadows Into Light</option>
+                        </select>
                         </div>
                     </div>
-                    <!--         Combo Box           -->
-                    <div class="item-wrapper one">
-                        <div class="col">
-                            <select class="form-control" required>
-                                <option value="digital">Digital</option>
-                                <option value="photography">Photography</option>
-                                <option value="sculptor">Sculptor</option>
-                                <option value="-">Other</option>
-                            </select>
+
+                    <!--         Combo Box Background Color          -->
+                    <div class="item-wrapper one" style="padding-top: 2rem">
+                        <label><h4>* Background Color</h4></label>
+                        <div class="col"><select class="form-control" required>
+                            <option value="yellow">Yellow</option>
+                            <option value="pink">Pink</option>
+                            <option value="white">White</option>
+                            <option value="gray">Gray</option>
+                            <option value="black">Black</option>
+                        </select>
                         </div>
                     </div>
 
@@ -210,8 +222,8 @@
                         <div class="item">
                             <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
                                 <div class="item-inner">
+                                    <!--               Upload Content                     -->
                                     <div class="item-content">
-                                        <h4 class="mb-0">Resume</h4>
                                         <div class="image-upload"><label style="cursor: pointer;" for="file_upload1">
                                             <img src=""
                                                  alt=""
@@ -220,37 +232,16 @@
                                             <div class="h-100">
                                                 <div class="dplay-tbl">
                                                     <div class="dplay-tbl-cell"><i class="fa fa-cloud-upload"></i>
-                                                        <h5><b>Choose Your Resume to Upload</b></h5>
+                                                        <h5><b>Choose Your Background Image to Upload</b></h5>
                                                         <h6 class="mt-10 mb-70">Or Drop Your Image Here</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--upload-content-->
                                             <input data-required="image" type="file" name="image_name" id="file_upload1"
-                                                   class="image-input" data-traget-resolution="image_resolution"
-                                                   value="">
-                                        </label></div>
-                                    </div>
-                                    <div class="item-content">
-                                        <h4 class="mb-0">Profile Image</h4>
-                                        <div class="image-upload">
-                                            <label style="cursor: pointer;" for="file_upload2">
-                                                <img src="" alt="" class="uploaded-image">
-
-                                                <div class="h-100">
-                                                    <div class="dplay-tbl">
-                                                        <div class="dplay-tbl-cell"><i class="fa fa-cloud-upload"></i>
-                                                            <h5><b>Choose Your Profile Image to Upload</b></h5>
-                                                            <h6 class="mt-10 mb-70">Or Drop Your Image Here</h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!--upload-content-->
-                                                <input data-required="image" type="file" name="image_name"
-                                                       id="file_upload2"
-                                                       class="image-input" data-traget-resolution="image_resolution"
-                                                       value="">
-                                            </label>
+                                                   class="image-input"
+                                                   data-traget-resolution="image_resolution" value="">
+                                        </label>
                                         </div>
                                     </div>
                                     <!--item-content-->
@@ -263,11 +254,11 @@
 
                     <div class="row align-items-center mt-4 mb-5">
                         <div class="col text-left">
-                            <div class="custom-control custom-checkbox">
-                                <input id="my-input" class="custom-control-input" type="checkbox" name=""
-                                       value="true"><label for="my-input" class="custom-control-label">
-                                <span>I agree to the [Terms of Use] and [Privacy Policy].</span>
-                            </label>
+                            <div class="custom-control custom-checkbox"><input id="my-input"
+                                                                               class="custom-control-input"
+                                                                               type="checkbox" name=""
+                                                                               value="true"><label for="my-input"
+                                                                                                   class="custom-control-label"><span>I agree to the [Terms of Use] and [Privacy Policy].</span></label>
                             </div>
                         </div>
                     </div>
@@ -279,5 +270,4 @@
         </div>
     </div>
 </section>
-</body>
 </html>

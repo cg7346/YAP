@@ -7,11 +7,12 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="https://kit.fontawesome.com/e003bd8ef5.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <title>YAP - Customization </title>
+    <title>YAP - Customization</title>
 </head>
 
 <body>
@@ -99,11 +100,30 @@
     </div>
 </div>
 
+<!--<a class="btn btn-outline-dark btn-xl" data-modal-trigger aria-controls="modal-name"-->
+<!--   aria-expanded="false">-->
+<button class="btn" data-modal-trigger aria-controls="modal-settings" style="float: right">
+    <img style="width: 5rem;" src="https://img.icons8.com/ios/30/000000/settings--v1.png"/>
+</button>
+<!--    <i class="fas fa-cog"></i>-->
+<!--</a>-->
+
+
 <!-- HEADER MODAL -->
 <div id="header-modal">
     <script>
         $(function () {
             $("#header-modal").load("header-customization.html");
+        });
+    </script>
+</div>
+<!--END OF HEADER MODAL-->
+
+<!-- SETTINGS MODAL -->
+<div id="settings-modal">
+    <script>
+        $(function () {
+            $("#settings-modal").load("settings-customization.html");
         });
     </script>
 </div>
