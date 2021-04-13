@@ -30,6 +30,16 @@
                         "inferretque deōs Latiō, genus unde Latīnum,\n" +
                         "Albānīque patrēs, atque altae moenia Rōmae. "
                 }
+                let five = {
+                    id: 5,
+                    title: "Imaging Expert",
+                    img: "test5.jpg",
+                    location: "Corning, New York",
+                    locationid: 'ny',
+                    company: "Boston Dynamics",
+                    type: "intern",
+                    description: "Test description please ignore."
+                }
                 let four = {
                     id: 4,
                     title: "Imaging Specialist",
@@ -120,7 +130,7 @@
                     e.preventDefault();
                     cardContainer = document.getElementById('card-container')
                     cardContainer.innerHTML = '';
-                    let arr = [one, two, three, four];
+                    let arr = [one, two, three, four, five];
                     let res = [];
                     let checked = false
                     if(document.getElementById('ny').checked){
@@ -157,7 +167,7 @@
                 });
 
 
-                let arr = [one, two, three, four]
+                let arr = [one, two, three, four, five]
 
                 arr.forEach((a) => {createTaskCard(a)})
 
