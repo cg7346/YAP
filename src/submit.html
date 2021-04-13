@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="submit.css">
+    <title>YAP</title>
+
+</head>
+
+<body>
+  <nav class="navbar-customclass navbar-default navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">YAP</a>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right top">
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right top">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="#">Employment</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="popup1" class="Popup1"> <!--Initial popup-->
+  <div class="Popup1-top">
+    <div class="DropHere">
+      <div class="DropHereText">
+        <p>Drop Image Here</p>
+      </div>
+    </div>
+  </div>
+  <div class="Popup1-bottom">
+    <h1 style="margin-top: 7%;">-OR-</h2>
+    <div id="file" class="Option1">Nagivate to file</div>
+    <div id="drive" class="Option1">Upload from Drive</div>
+    <form>
+      <input type="url" style="color: black;" id="url" name="url" placeholder="Upload from URL" size="47.5%"> 
+    </form>
+    <button onclick="cont()" class="Continue"><p>
+        Continue
+      </p></span>
+  </div>
+</div>
+<div class="Main"> <!--Main submission page-->
+  <div id="main" class="Container">
+    <div class="Main-left">
+      <div class="Main-left-top">
+        <button onclick="back()" class="Back">Back</button> <!--Back button-->
+        <div style="overflow: hidden; position: relative; top:79px;">
+          <form style="margin: 0; padding: 0;"><!--rest-->
+            <p style="color:white;font-size:16px; padding-right: 10%;">
+              Options marked with <i><b>*&nbsp</b></i> are required.
+              <input style="display: inline; margin-left: 17%; color:black; width: 150px; font-size: 22px;" type="text" placeholder="Title*" />
+            </p>
+          </form>  
+        </div>
+      </div>
+      <div class="Main-left-mid">
+        <textarea class="Desc" placeholder="Description*"></textarea>
+        <textarea class="Tags" placeholder="Search Tags"></textarea>
+        <form>
+          <select id="meduim" name="meduim">
+          <option disabled selected>Medium*</option>
+          <option>Digital</option>
+          <option>Painting</option>
+          <option>Drawing</option>
+          <option>Sculpture</option>
+          <option>Photography</option>
+          <option>Other</option>
+          </select>
+        </form>
+      </div>
+      <div class="Main-left-bottom">
+        <div> <!--Dates-->
+          <textarea class="Date" placeholder="Start Date"></textarea>
+          <textarea class="Date" placeholder="End Date"></textarea>
+        </div>
+        <div><!--Enables-->
+          <form style="margin: 0; padding: 0;">
+            <p class="Enable" style="margin-top: 2%;">
+              <input style="display: inline;" type="checkbox"/>
+              Enable comments.
+            </p>
+            <p class="Enable">  
+              <input style="display: inline;" type="checkbox"/>
+              Enable Ratings.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="Main-right">
+      <div class="Img">
+        <img src="media/SubTemp.jpg" alt="image" style="display:block; width:75%;height:75%; margin-left:auto; margin-right: auto; margin-top: 5%;">
+      </div>
+      <form>
+        <p style="color:white;font-size:16px;margin-top: 10px; margin-left: 30%; margin-top: 3%;">
+          <input style="display: inline; text-align: center;" type="checkbox"/>
+          I have read and agree to the terms of service.
+        </p>
+      </form>
+      <button onclick="sub()" class="Submit">
+        Submit
+      </div>
+    </div>
+</div>
+<div id="popup2" class="Popup2"> <!--Final popup-->
+  <div class="Popup2-text"> Art Succsussfully Submitted </div>
+  <button onclick="ret()" class="Ret"> Return to My Profile</button>
+</div>
+
+<script>
+  var popup1 = document.getElementById("popup1");
+  var main = document.getElementById("main");
+  var popup2 = document.getElementById("popup2");
+  var submit = document.getElementsByClassName("Submit");
+  function cont(){
+    popup1.style.display = "none";
+    main.style.display = "grid";
+  }
+  function back(){
+    popup1.style.display = "block";
+    main.style.display = "none";
+  }
+  function sub(){
+    popup2.style.display = "block";
+  }
+
+  function ret(){
+    //todo redirect to profile
+  }
+  
+  
+</script>
+</body>
+</html>

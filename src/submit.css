@@ -1,0 +1,187 @@
+.Popup1 {
+    position:absolute;
+    z-index: 2;
+    top:10%;
+    left:33%;
+    width:33%; 
+    height:80%;
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-width: 7px;
+    border-color: black;}
+.Popup1-top{
+    background-color: rgb(70,70,70);
+    border-bottom: 7px solid black;
+    width: 100%;
+    height: 40%;
+    color: white;}
+.DropHere{
+    position: relative;
+    background-color:transparent;
+    border-style: dashed;
+    border-radius: 5px;
+    margin-left: 25%;
+    top: 20%;
+    width: 50%;
+    height: 60%;}
+.DropHereText{
+    font-size: 30px;
+    margin-top: 22%;
+    text-align: center;}
+.Popup1-bottom{
+    color:white;
+    text-align: center;}
+.Option1{
+    background-color: rgb(35, 35, 35);
+    font-size: 35px;
+    border: 5px solid black;
+    margin-top: 2.5%;
+    margin-bottom: 7%;
+    width: 60%;
+    margin-left: 20%;}
+.input{
+    color: black;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 5px solid black;
+    border-radius: 4px;
+    background-color: #000000;
+    resize: none;}
+.Continue{
+    background-color: rgb(35, 35, 35);
+    position: relative;
+    color:#FFF;
+    border: 5px solid black;
+    font-size: 30px;
+    margin-top: 5%;}
+.Continue:hover,
+.Continue:focus {
+  border-color: white;
+  text-decoration: none;
+  cursor: pointer;}
+.Option1:hover,
+.Option1:focus{
+  border-color: white;
+  text-decoration: none;
+  cursor: pointer;}
+.Main{
+    position:absolute;
+    z-index: 1;
+    width:100%;  /* adjust as per your needs */
+    height:100%;   /* adjust as per your needs */
+    background-color: rgb(35, 35, 35);}
+.Container{
+    display: none;
+    grid-template-columns: 1fr 1fr;}
+.Main-Left-top{
+    position:relative;}
+.Back{
+    float: left;
+    overflow: hidden;
+    color: white;
+    display: inline;
+    background-color: rgb(35, 35, 35);
+    font-size: 35px;
+    border: 5px solid black;
+    width: 20%;
+    text-align: center;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;}
+.Back:hover,
+.Back:focus {
+  border-color: white;
+  text-decoration: none;
+  cursor: pointer;}
+
+.Main-left-mid{
+    position: relative;
+    margin-top: 10%;
+    margin-left: 5%;}
+.Desc{
+    height: 250px;
+    width: 90%;
+    resize: none;
+    border: 4px black solid;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 3.5%;}
+.Tags{
+    display: block;
+    height: 60px;
+    width: 90%;
+    resize: none;
+    border: 4px black solid;
+    color: black;
+    font-size: 18px;
+    margin-bottom: 3.5%;}
+select {
+    padding: 10px 10px;
+    background-color: #f1f1f1;
+    border: 4px black solid;
+    margin-bottom: 13%;}
+.Main-left-bottom{
+    position: relative;
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;} 
+.Date{position: relative;
+    display: block;
+    height: 40px;
+    width: 30%;
+    resize: none;
+    border: 4px black solid;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-left: 60%;}
+.Enable{color:white;
+    font-size:16px;
+    margin-bottom: 55px;
+}
+.Submit{
+    background-color: rgb(35, 35, 35);
+    border: 5px solid black;
+    font-size: 35px;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;}
+.Submit:hover,
+.Submit:focus{
+    border-color: white;
+    text-decoration: none;
+    cursor: pointer;}
+.Popup2{
+    position:absolute;
+    display: none;
+    z-index: 2;
+    top:50%;
+    left:50%;
+    width:40%;  
+    height:60%;   
+    margin-left: -20%;   
+    margin-top: -20%;
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-width: 7px;
+    border-color: black;}
+.Popup2-text{
+    position: relative;
+    top: 25%;
+    color: white;
+    text-align: center;
+    font-size: 30pt;}
+.Ret{
+    background-color: rgb(35, 35, 35);
+    border: 5px solid black;
+    font-size: 35px;
+    color: white;
+    margin-top: 40%;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;}
