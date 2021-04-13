@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css.css">
     <link rel="stylesheet" href="homepage.css">
 
@@ -10,27 +10,29 @@
 </head>
 
 <body>
-  <nav class="navbar-customclass navbar-default navbar-inverse" role="navigation">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">YAP</a>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right top">
-          <li class="dropdown active">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right top">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="active"><a href="#">Employment</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+  <nav class = "navbar navbar-expand-sm navbar-dark col" style="background-color: #F3C104">
+    <h3>YAP</h3>
+
+    <form class = "form-inline">
+        <input class = "form-control mr-sm-2" id="sea" type = "text" placeholder = "Search">
+        <button class = "btn btn-info" type = "submit" id="btn_usr" style="background-color:white; color: black;">Search</button>
+    </form>
+    <ul class = "nav navbar-nav navbar-right top ml-auto" style="color: black;">
+        <li class = "nav-item">
+            <a class = "nav-link" href = "#"style="color: black;">Home
+                <span class = "sr-only">(current)</span>
+            </a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "#"style="color: black;">About Us</a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "#"style="color: black;">Contact</a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "#"style="color: black;">Login</a>
+        </li>
+    </ul>
 </nav>
 
 <div class="wrapper">
