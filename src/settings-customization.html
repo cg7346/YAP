@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YAP - Customization</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var modal = function () {
+
+            /**
+             * Element.closest() polyfill
+             * https://developer.mozilla.org/en-US/docs/Web/API/Element/closest#Polyfill
+             */
+            if (!Element.prototype.closest) {
+                if (!Element.prototype.matches) {
+                    Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+                }
+                Element.prototype.closest = function (s) {
+                    var el = this;
+                    var ancestor = this;
+                    if (!document.documentElement.contains(el)) return null;
+                    do {
+                        if (ancestor.matches(s)) return ancestor;
+                        ancestor = ancestor.parentElement;
+                    } while (ancestor !== null);
+                    return null;
+                };
+            }
+
+
+            //
+            // Settings
+            //
+            var settings = {
+                speedOpen: 50,
+                speedClose: 250,
+                activeClass: 'is-active',
+                visibleClass: 'is-visible',
+                selectorTarget: '[data-modal-target]',
+                selectorTrigger: '[data-modal-trigger]',
+                selectorClose: '[data-modal-close]',
+            };
+
+
+            //
+            // Methods
+            //
+
+            // Toggle accessibility
+            var toggleccessibility = function (event) {
+                if (event.getAttribute('aria-expanded') === 'true') {
+                    event.setAttribute('aria-expanded', false);
+                } else {
+                    event.setAttribute('aria-expanded', true);
+                }
+            };
+
+            // Open Modal
+            var openModal = function (trigger) {
+
+                // Find target
+                var target = document.getElementById(trigger.getAttribute('aria-controls'));
+
+                // Make it active
+                target.classList.add(settings.activeClass);
+
+                // Make body overflow hidden so it's not scrollable
+                document.documentElement.style.overflow = 'hidden';
+
+                // Toggle accessibility
+                toggleccessibility(trigger);
+
+                // Make it visible
+                setTimeout(function () {
+                    target.classList.add(settings.visibleClass);
+                }, settings.speedOpen);
+
+            };
+
+            // Close Modal
+            var closeModal = function (event) {
+
+                // Find target
+                var closestParent = event.closest(settings.selectorTarget),
+                    childrenTrigger = document.querySelector('[aria-controls="' + closestParent.id + '"');
+
+                // Make it not visible
+                closestParent.classList.remove(settings.visibleClass);
+
+                // Remove body overflow hidden
+                document.documentElement.style.overflow = '';
+
+                // Toggle accessibility
+                toggleccessibility(childrenTrigger);
+
+                // Make it not active
+                setTimeout(function () {
+                    closestParent.classList.remove(settings.activeClass);
+                }, settings.speedClose);
+
+            };
+
+            // Click Handler
+            var clickHandler = function (event) {
+
+                // Find elements
+                var toggle = event.target,
+                    open = toggle.closest(settings.selectorTrigger),
+                    close = toggle.closest(settings.selectorClose);
+
+                // Open modal when the open button is clicked
+                if (open) {
+                    openModal(open);
+                }
+
+                // Close modal when the close button (or overlay area) is clicked
+                if (close) {
+                    closeModal(close);
+                }
+
+                // Prevent default link behavior
+                if (open || close) {
+                    event.preventDefault();
+                }
+
+            };
+
+            // Keydown Handler, handle Escape button
+            var keydownHandler = function (event) {
+
+                if (event.key === 'Escape' || event.keyCode === 27) {
+
+                    // Find all possible modals
+                    var modals = document.querySelectorAll(settings.selectorTarget),
+                        i;
+
+                    // Find active modals and close them when escape is clicked
+                    for (i = 0; i < modals.length; ++i) {
+                        if (modals[i].classList.contains(settings.activeClass)) {
+                            closeModal(modals[i]);
+                        }
+                    }
+
+                }
+
+            };
+
+
+            //
+            // Inits & Event Listeners
+            //
+            document.addEventListener('click', clickHandler, false);
+            document.addEventListener('keydown', keydownHandler, false);
+        };
+
+        modal();
+
+    </script>
+</head>
+<body>
+<!-- SETTINGS MODAL -->
+<section class="modal" id="modal-settings" data-modal-target>
+    <div class="modal__overlay" data-modal-close tabindex="-1"></div>
+    <div class="modal__wrapper">
+        <div class="modal__header">
+            <div class="modal__title">
+                <h1>Portfolio Settings</h1>
+            </div>
+            <button class="modal__close" data-modal-close aria-label="Close Modal"></button>
+        </div>
+        <div class="card-body pt-0">
+            <div class="row justify-content-center pb-sm-5 pb-3">
+                <div class="col-md-10 col px-md-0 px-4">
+                    <!--         Combo Box Theme          -->
+                    <div class="item-wrapper one" style="padding-top: 2rem">
+                        <label><h4>* Theme</h4></label>
+                        <div class="col"><select class="form-control" required>
+
+                            <option value="simple">Simple</option>
+                            <option value="pop">Pop</option>
+                            <option value="modern">Modern</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <!--         Combo Box Font Style          -->
+                    <div class="item-wrapper one" style="padding-top: 2rem">
+                        <label><h4>* Font Style</h4></label>
+                        <div class="col"><select class="form-control" required>
+                            <option value="sans-serif">Sans Serif</option>
+                            <option value="merriweather">Merriweather</option>
+                            <option value="shawdows-into-light">Shadows Into Light</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <!--         Combo Box Background Color          -->
+                    <div class="item-wrapper one" style="padding-top: 2rem">
+                        <label><h4>* Background Color</h4></label>
+                        <div class="col"><select class="form-control" required>
+                            <option value="yellow">Yellow</option>
+                            <option value="pink">Pink</option>
+                            <option value="white">White</option>
+                            <option value="gray">Gray</option>
+                            <option value="black">Black</option>
+                        </select>
+                        </div>
+                    </div>
+
+                    <div class="item-wrapper one">
+                        <div class="item">
+                            <form data-validation="true" action="#" method="post" enctype="multipart/form-data">
+                                <div class="item-inner">
+                                    <!--               Upload Content                     -->
+                                    <div class="item-content">
+                                        <label><h4>Background Image</h4></label>
+                                        <div class="image-upload"><label style="cursor: pointer;" for="file_upload1">
+                                            <img src=""
+                                                 alt=""
+                                                 class="uploaded-image">
+
+                                            <div class="h-100">
+                                                <div class="dplay-tbl">
+                                                    <div class="dplay-tbl-cell"><i class="fa fa-cloud-upload"></i>
+                                                        <h5><b>Choose Your Background Image to Upload</b></h5>
+                                                        <h6 class="mt-10 mb-70">Or Drop Your Image Here</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--upload-content-->
+                                            <input data-required="image" type="file" name="image_name" id="file_upload1"
+                                                   class="image-input"
+                                                   data-traget-resolution="image_resolution" value="">
+                                        </label>
+                                        </div>
+                                    </div>
+                                    <!--item-content-->
+                                </div>
+                                <!--item-inner-->
+                            </form>
+                        </div>
+                        <!--item-->
+                    </div>
+
+                    <div class="row align-items-center mt-4 mb-5">
+                        <div class="col text-left">
+                            <div class="custom-control custom-checkbox"><input id="my-input"
+                                                                               class="custom-control-input"
+                                                                               type="checkbox" name=""
+                                                                               value="true"><label for="my-input"
+                                                                                                   class="custom-control-label"><span>I agree to the [Terms of Use] and [Privacy Policy].</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline-dark btn-sm btn-block" type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
