@@ -79,7 +79,8 @@
             </div>
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="mb-0">Projects</h5><a href="#" class="btn btn-link text-muted">Show all</a>
+                    <h5 class="mb-0">Projects</h5>
+                    <a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">Edit Projects</a>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 mb-2 pr-lg-1"><img
@@ -114,6 +115,16 @@
     <script>
         $(function () {
             $("#header-modal").load("header-customization.html");
+        });
+    </script>
+</div>
+<!--END OF HEADER MODAL-->
+
+<!-- PROJECTS MODAL -->
+<div id="project-modal">
+    <script>
+        $(function () {
+            $("#project-modal").load("project-customization.html");
         });
     </script>
 </div>
