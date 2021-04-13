@@ -3,6 +3,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>YAP</title>
     <script>
         (function(window, document, undefined){
@@ -11,25 +13,90 @@
 
         window.onload = init;
 
-            function init(){
+        // Objects
+                let one = {
+                    id: 1,
+                    title: "Graphic Design Intern",
+                    img: "test.jpg",
+                    location: "Austin, Texas",
+                    locationid: 'tx',
+                    company: "SpaceX",
+                    type: "full",
+                    description: "Arma virumque canō, Trōiae quī prīmus ab ōrīs\n" +
+                        "Ītaliam, fātō profugus, Lāvīniaque vēnit\n" +
+                        "lītora, multum ille et terrīs iactātus et altō\n" +
+                        "vī superum saevae memorem Iūnōnis ob īram;\n" +
+                        "multa quoque et bellō passūs, dum conderet urbem,\n" +
+                        "inferretque deōs Latiō, genus unde Latīnum,\n" +
+                        "Albānīque patrēs, atque altae moenia Rōmae. "
+                }
 
+                let two = {
+                    id: 2,
+                    title: "Graphic Designer",
+                    img: "test2.jpg",
+                    location: "Dallas, Texas",
+                    locationid: 'tx',
+                    company: "Tesla",
+                    type: "part",
+                    description: " Quo usque tandem abutere, Catilina, patientia nostra? quam diu etiam furor iste tuus nos eludet? quem ad finem sese effrenata iactabit audacia? Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae, nihil timor populi, nihil concursus bonorum omnium, nihil hic munitissimus habendi senatus locus, nihil horum ora voltusque moverunt? Patere tua consilia non sentis, constrictam iam horum omnium scientia teneri coniurationem tuam non vides? Quid proxima, quid superiore nocte egeris, ubi fueris, quos convocaveris, quid consilii ceperis, quem nostrum ignorare arbitraris?"
+                }
+                let three = {
+                    id: 3,
+                    title: "Imaging Scientist",
+                    img: "test3.jpg",
+                    location: "Rochester, New York",
+                    locationid: 'ny',
+                    type: "intern",
+                    company: "Kodak",
+                    description: "Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit."
+                }
+
+            function init(){
                 let createTaskCard = (task) => {
                     let card = document.createElement('div');
-                    card.className = 'card shadow cursor-pointer';
+                    card.className = 'card shadow cursor-pointer ';
+                    card.style = 'background-color: rgb(34, 31, 31); color: white;';
+
+
+                    let wrap = document.createElement('div')
+                    wrap.className = 'text-center'
+
+
+                    let img = document.createElement('img');
+                    img.className = "card-img-top"
+                    img.src = task.img
+                    img.style = "width: 300px; height: 300px;"
+
+                    wrap.appendChild(img)
 
                     let cardBody = document.createElement('div');
                     cardBody.className = 'card-body';
 
                     let title = document.createElement('h5');
                     title.innerText = task.title;
-                    title.className = 'card-title';
 
-                    let color = document.createElement('div');
-                    color.innerText = task.color;
-                    color.className = 'card-color';
+                    let company = document.createElement('p')
+                    company.innerHTML = task.company
+
+                    let location = document.createElement('p')
+                    location.innerHTML = task.location
+
+                    let but = document.createElement('button')
+                    but.className = 'btn'
+                    but.innerHTML = "View Listing"
+                    but.addEventListener("click", function but_press(e){
+                        e.preventDefault();
+                        createCard(task);
+                        document.getElementById('ihjs').click()
+                    });
+
 
                     cardBody.appendChild(title);
-                    cardBody.appendChild(color);
+                    cardBody.appendChild(company)
+                    cardBody.appendChild(location);
+                    cardBody.appendChild(but)
+                    card.appendChild(wrap);
                     card.appendChild(cardBody);
 
                     cardContainer = document.getElementById('card-container')
@@ -40,28 +107,68 @@
                     x = document.getElementById("sea").value;
                     window.location = './search.html?' + x;
                 });
-                // Objects
-                one = {
-                    id: "job1",
-                    title: "Tile",
-                    location: "texas"
-                }
+                document.getElementById("filter").addEventListener("click", function filter(e){
+                    e.preventDefault();
+                    cardContainer = document.getElementById('card-container')
+                    cardContainer.innerHTML = '';
+                    let arr = [one, two, three];
+                    let res = [];
+                    let checked = false
+                    if(document.getElementById('ny').checked){
+                        res.push(...arr.filter(object => object.locationid === 'ny'))
+                        checked = true
+                    }
+                    if(document.getElementById('tx').checked){
+                        res.push(...arr.filter(object => object.locationid === 'tx'))
+                        checked = true
+                    }
+                    if(!checked) {
+                        res = arr
+                    }
+                    checked = false
+                    res2 = []
+                    if(document.getElementById('full').checked){
+                        res2.push(...res.filter(object => object.type === 'full'))
+                        checked = true
+                    }
+                    if(document.getElementById('part').checked){
+                        res2.push(...res.filter(object => object.type === 'part'))
+                        checked = true
+                    }
+                    if(document.getElementById('intern').checked){
+                        res2.push(...res.filter(object => object.type === 'intern'))
+                        checked = true
+                    }
 
-                var arr = [one, one]
+                    if(!checked) {
+                        res2 = res
+                    }
+
+                    res2.forEach((a) => {createTaskCard(a)})
+                });
+
+
+                let arr = [one, two, three]
 
                 arr.forEach((a) => {createTaskCard(a)})
 
         };
 
         })(window, document, undefined);
-
+        function createCard(task){
+            document.getElementById('dsc').innerHTML = task.description
+            document.getElementById('title').innerHTML = task.title
+            document.getElementById('pic').src = task.img
+            document.getElementById('comp').innerHTML = task.company
+            document.getElementById('loc').innerHTML = task.location
+        }
     </script>
 
 </head>
 
-<body>
-<nav class = "navbar navbar-expand-sm navbar-dark col" style="background-color: #F3C104">
-    <h3>YAP</h3>
+<body style="background-color: rgb(34, 31, 31); color: white">
+<nav class = "navbar navbar-expand-sm navbar-dark col" style="background-color: #eab107;">
+    <h3 style="color:black;">YAP</h3>
 
     <form class = "form-inline">
         <input class = "form-control mr-sm-2" id="sea" type = "text" placeholder = "Search">
@@ -84,10 +191,68 @@
         </li>
     </ul>
 </nav>
+        <div style="float:left; overflow: hidden; margin: 5px; ">
+            <div class="sidebar-header">
+            <h3>Filters</h3>
+            <h5>Job Type</h5>
+                <input type="checkbox" id="full" name="vehicle1" value="full">
+                <label for="full"> Full-time</label><br>
+                <input type="checkbox" id="part" name="vehicle2" value="part">
+                <label for="part"> Part-time</label><br>
+                <input type="checkbox" id="intern" name="vehicle3" value="intern">
+                <label for="part"> Internship</label><br>
+            </div>
+            <h5>Location</h5>
+            <input type="checkbox" id="ny" name="vehicle1" value="ny">
+                <label for="ny"> New-York</label><br>
+            <input type="checkbox" id="tx" name="vehicle1" value="tx">
+                <label for="tx"> Texas</label><br>
+            <button class = "btn btn-info" type = "submit" id="filter" style="background-color:white; color: black;">Filter</button>
+        </div>
+        <div class="card-deck" id="card-container" style="margin: 10px; overflow: hidden;"></div>
 
-  <div class="card-deck" id="card-container"></div>
 
 
+
+<div class="modal" tabindex="-1" role="dialog" id="3" style="background-color: rgb(34, 31, 31); color: black">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="text-center">
+            <img id="pic" style="width: 300px; height: 300px;"/>
+          </div>
+          <p id="comp"></p>
+          <p id="loc"></p>
+          <p id="dsc">Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#2">Apply Now</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="2" style="background-color: rgb(34, 31, 31); color: black">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Application Successfully Submitted</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button style="visibility: hidden" id="ihjs" type="button" data-toggle="modal" data-target="#3">Open Modal</button>
 
 
 
