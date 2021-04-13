@@ -30,7 +30,16 @@
                         "inferretque deōs Latiō, genus unde Latīnum,\n" +
                         "Albānīque patrēs, atque altae moenia Rōmae. "
                 }
-
+                let four = {
+                    id: 4,
+                    title: "Imaging Specialist",
+                    img: "test4.jpg",
+                    location: "New York, NY",
+                    locationid: 'ny',
+                    company: "Amazon",
+                    type: "full",
+                    description: "Lorem ipsum dolor sit amet."
+                }
                 let two = {
                     id: 2,
                     title: "Graphic Designer",
@@ -55,7 +64,7 @@
             function init(){
                 let createTaskCard = (task) => {
                     let card = document.createElement('div');
-                    card.className = 'card shadow cursor-pointer ';
+                    card.className = 'card shadow cursor-pointer col-auto mb-3';
                     card.style = 'background-color: rgb(34, 31, 31); color: white;';
 
 
@@ -111,7 +120,7 @@
                     e.preventDefault();
                     cardContainer = document.getElementById('card-container')
                     cardContainer.innerHTML = '';
-                    let arr = [one, two, three];
+                    let arr = [one, two, three, four];
                     let res = [];
                     let checked = false
                     if(document.getElementById('ny').checked){
@@ -148,7 +157,7 @@
                 });
 
 
-                let arr = [one, two, three]
+                let arr = [one, two, three, four]
 
                 arr.forEach((a) => {createTaskCard(a)})
 
@@ -167,7 +176,7 @@
 </head>
 
 <body style="background-color: rgb(34, 31, 31); color: white">
-<nav class = "navbar navbar-expand-sm navbar-dark col" style="background-color: #eab107;">
+<nav class = "navbar navbar-expand-sm " style="background-color: #161101;">
     <h3 style="color:black;">YAP</h3>
 
     <form class = "form-inline">
@@ -176,18 +185,15 @@
     </form>
     <ul class = "nav navbar-nav navbar-right top ml-auto" style="color: black;">
         <li class = "nav-item">
-            <a class = "nav-link" href = "#"style="color: black;">Home
+            <a class = "nav-link" href = "index.html"style="color: black;">Home
                 <span class = "sr-only">(current)</span>
             </a>
         </li>
         <li class = "nav-item"style="color: black;">
-            <a class = "nav-link" href = "#"style="color: black;">About Us</a>
+            <a class = "nav-link" href = "search.html"style="color: black;">Employment</a>
         </li>
         <li class = "nav-item"style="color: black;">
-            <a class = "nav-link" href = "#"style="color: black;">Contact</a>
-        </li>
-        <li class = "nav-item"style="color: black;">
-            <a class = "nav-link" href = "#"style="color: black;">Login</a>
+            <a class = "nav-link" href = "customization.html"style="color: black;">Login</a>
         </li>
     </ul>
 </nav>
@@ -209,7 +215,7 @@
                 <label for="tx"> Texas</label><br>
             <button class = "btn btn-info" type = "submit" id="filter" style="background-color:white; color: black;">Filter</button>
         </div>
-        <div class="card-deck" id="card-container" style="margin: 10px; overflow: hidden;"></div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" id="card-container" style="margin: 20px; padding: 30px; overflow: hidden;"></div>
 
 
 
