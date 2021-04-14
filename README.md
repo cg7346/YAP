@@ -14,13 +14,13 @@ The team primarly used html, css, js, and bootstrap to construct our beta protot
 YAP (Yet Another Portfolio) is for artists/creators, contractors/employers, and the public. This will allow creators to post their content so that other people including potential employers can view and interact with it. Users will have the ability to like, comment, and commission future and existing work. YAP will connect creators with potential customers be that on a commission basis or for employment purposes. YAP will provide a minimal set of customization options for portfolios, with the main focus being a timeline of projects the creator posts, with interaction options next. YAP will enable users to connect and network with other users and potential employers/contractors. The users will be able to update current projects they are working on overtime. Others will be able to like, comment, and reply to an individual's portfolio post. This will allow people to connect and find others to work for potential employment opportunities.
 
 ## Workflow Diagram
-![Workflow](/Users/celestegambardella/OneDrive - rit.edu/SWEN 444/Project Info/Code/YAP/src/media/Workflow.png)
+![Workflow](src/media/Workflow.png)
 
 The workflow diagram above shows how our various user roles interact with each other. The system consists of our YAP Database and our YAP Web interface. Artists can publish their work on the site so other artists, general users, and employers can view and interact with them. Employers can contact artists to initiate employment negotiations. 
 
 ##Affinity Diagram
 
-![Workflow](/Users/celestegambardella/OneDrive - rit.edu/SWEN 444/Project Info/Code/YAP/src/media/WAAD.png)
+![Workflow](src/media/WAAD.png)
 
 The WAAD Diagram above was an interesting experience for the team. As expected, we had a few overlapping activity notes that we needed to synthesize into one note. From our work activity notes, we were able to come up with the 5 categories above: Competitors, Employer Artists Interaction, Presentation, Feedback, and Customization. These categories allow us to divide up our requirements and make sure that we are satisfying all aspects of our system. 
 ## Purpose of Usability Evaluation
