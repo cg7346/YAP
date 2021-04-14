@@ -97,7 +97,7 @@
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h5 class="mb-0" style="color: black;">Featured Projects</h5>
-                    <a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">Edit Projects</a>
+                    <a href="" data-modal-trigger aria-controls="modal-featured" class="btn btn-link text-muted">Select Featured Projects</a>
                 </div>
                 <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
@@ -154,7 +154,13 @@
                             </a></div>
                 </div>
             </div>
-        </div>
+
+            <a href="submit.html" class="btn btn-outline-dark btn-sm btn-block" aria-expanded="false"
+               style="background-color: rgb(34, 31, 31); color: white;">
+                <h3 style="padding: 3rem">POST NEW ARTWORK</h3>
+            </a>
+
+    </div>
     </div>
 </div>
 
@@ -174,6 +180,16 @@
 </div>
 <!--END OF HEADER MODAL-->
 
+<!-- FEATURED MODAL -->
+<div id="project-featured" style="background-color: rgb(34, 31, 31); color: white">
+    <script>
+        $(function () {
+            $("#project-featured").load("featured-projects-customization.html");
+        });
+    </script>
+</div>
+<!--END OF FEATURED MODAL-->
+
 <!-- PROJECTS MODAL -->
 <div id="project-modal" style="background-color: rgb(34, 31, 31); color: white">
     <script>
@@ -182,7 +198,7 @@
         });
     </script>
 </div>
-<!--END OF HEADER MODAL-->
+<!--END OF PROJECTS MODAL-->
 
 <!-- SETTINGS MODAL -->
 <div id="settings-modal" style="background-color: rgb(34, 31, 31); color: white">
@@ -192,7 +208,7 @@
         });
     </script>
 </div>
-<!--END OF HEADER MODAL-->
+<!--END OF SETTINGS MODAL-->
 
 </body>
 </html>
