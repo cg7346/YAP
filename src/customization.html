@@ -97,7 +97,7 @@
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h5 class="mb-0" style="color: black;">Featured Projects</h5>
-                    <a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">Edit Projects</a>
+                    <a href="" data-modal-trigger aria-controls="modal-featured" class="btn btn-link text-muted">Select Featured Projects</a>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mx-auto">
@@ -130,11 +130,10 @@
                     <a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">Edit Projects</a>
                 </div>
                 <div class="row">
-                    <!-- src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"-->
-                    <a href="feedback.html"><div class="col-lg-6 mb-2 pr-lg-1 justify-content-center align-items-center">
-                        <img src="media/A1.jpg"
-                            height="300px" alt="" class="img-fluid"><a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">
-                                <i style="color: white" class="fas fa-edit fa-2x"></i>
+                    <a href="feedback.html"><div class="col-lg-6 mb-2 pr-lg-1">
+                        <img src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+                             alt="" class="img-fluid rounded shadow-sm"><a href="" data-modal-trigger aria-controls="modal-project" class="btn btn-link text-muted">
+                                <i class="fas fa-edit fa-2x"></i>
                             </a></a>
                             </div>
                     <div class="col-lg-6 mb-2 pl-lg-1"><img
@@ -158,7 +157,13 @@
                             </a></div>
                 </div>
             </div>
-        </div>
+
+            <a href="submit.html" class="btn btn-outline-dark btn-sm btn-block" aria-expanded="false"
+               style="background-color: rgb(34, 31, 31); color: white;">
+                <h3 style="padding: 3rem">POST NEW ARTWORK</h3>
+            </a>
+
+    </div>
     </div>
 </div>
 
@@ -178,6 +183,16 @@
 </div>
 <!--END OF HEADER MODAL-->
 
+<!-- FEATURED MODAL -->
+<div id="project-featured" style="background-color: rgb(34, 31, 31); color: white">
+    <script>
+        $(function () {
+            $("#project-featured").load("featured-projects-customization.html");
+        });
+    </script>
+</div>
+<!--END OF FEATURED MODAL-->
+
 <!-- PROJECTS MODAL -->
 <div id="project-modal" style="background-color: rgb(34, 31, 31); color: white">
     <script>
@@ -186,7 +201,7 @@
         });
     </script>
 </div>
-<!--END OF HEADER MODAL-->
+<!--END OF PROJECTS MODAL-->
 
 <!-- SETTINGS MODAL -->
 <div id="settings-modal" style="background-color: rgb(34, 31, 31); color: white">
@@ -196,7 +211,7 @@
         });
     </script>
 </div>
-<!--END OF HEADER MODAL-->
+<!--END OF SETTINGS MODAL-->
 
 </body>
 </html>
