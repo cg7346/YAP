@@ -18,13 +18,27 @@
 <body>
 
     <!--Navigation bar-->
-    <div id="nav-placeholder">
-        <script>
-            $(function () {
-                $("#nav-placeholder").load("index.html");
-            });
-        </script>
-    </div>
+<nav class = "navbar navbar-expand-sm " style="background-color: yellow;">
+    <h3 style="color:black;">YAP</h3>
+
+    <form class = "form-inline">
+        <input class = "form-control mr-sm-2" id="sea" type = "text" placeholder = "Search">
+        <button class = "btn btn-info" type = "submit" id="btn_usr" style="background-color:white; color: black;">Search</button>
+    </form>
+    <ul class = "nav navbar-nav navbar-right top ml-auto" style="color: black;">
+        <li class = "nav-item">
+            <a class = "nav-link" href = "index.html"style="color: black;">Home
+                <span class = "sr-only">(current)</span>
+            </a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "search.html"style="color: black;">Employment</a>
+        </li>
+        <li class = "nav-item"style="color: black;">
+            <a class = "nav-link" href = "customization.html"style="color: black;">Login</a>
+        </li>
+    </ul>
+</nav>
     <!--end of Navigation bar-->
 
 
