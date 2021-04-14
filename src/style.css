@@ -21,6 +21,16 @@
     user-select: none;
 }
 
+/* Project Edit Icon*/
+.row i {
+    position: absolute;
+    color: white;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin: 15px;
+}
+
 .modal__header {
     /* Optional */
     padding: 1.5rem;
@@ -41,6 +51,8 @@
     width: 15px;
     height: 15px;
 }
+
+
 
 .modal__wrapper {
     width: 100%;
