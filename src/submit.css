@@ -68,7 +68,7 @@
     position:absolute;
     z-index: 1;
     width:100%;  /* adjust as per your needs */
-    height:100%;   /* adjust as per your needs */
+    height:105vh;   /* adjust as per your needs */
     background-color: rgb(35, 35, 35);}
 .Container{
     display: none;
@@ -97,7 +97,11 @@
 .Main-left-mid{
     position: relative;
     margin-top: 10%;
-    margin-left: 5%;}
+    margin-left: 5%;
+    }
+.Main-left-mid form {
+    height: 60px;
+}
 .Desc{
     height: 250px;
     width: 90%;
@@ -124,7 +128,9 @@ select {
     position: relative;
     margin-left: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr;} 
+    grid-template-columns: 1fr 1fr;
+    } 
+    
 .Date{position: relative;
     display: block;
     height: 40px;
@@ -133,11 +139,11 @@ select {
     border: 4px black solid;
     color: black;
     font-size: 20px;
-    margin-bottom: 40px;
-    margin-left: 60%;}
+    margin-bottom: 20px;
+    margin-left: 0;}
 .Enable{color:white;
     font-size:16px;
-    margin-bottom: 55px;
+    margin-bottom: 20px;
 }
 .Submit{
     background-color: rgb(35, 35, 35);
