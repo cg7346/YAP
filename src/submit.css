@@ -30,7 +30,13 @@
     text-align: center;}
 .Popup1-bottom{
     color:white;
-    text-align: center;}
+    text-align: center;
+    margin: 20px;
+}
+.custom-file input{
+    padding: 20px;
+    margin: 30px 10px;
+}
 .Option1{
     background-color: rgb(35, 35, 35);
     font-size: 35px;

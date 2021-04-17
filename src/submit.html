@@ -40,9 +40,22 @@
     </div>
   </div>
   <div class="Popup1-bottom">
-    <h1 style="margin-top: 7%;">-OR-</h2>
-    <div id="file" class="Option1">Nagivate to file</div>
-    <div id="drive" class="Option1">Upload from Drive</div>
+    <h1 style="margin: 7%;">-OR-</h2>
+    <!-- <div id="file" class="Option1">Navigate to file</div> -->
+    <!-- File Uploader -->
+    <form>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Navigate to File</label>
+      </div>
+    </form>
+    <!-- <div id="drive" class="Option1">Upload from Drive</div> -->
+    <form>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Upload From Drive</label>
+      </div>
+    </form>
     <form>
       <input type="url" style="color: black;" id="url" name="url" placeholder="Upload from URL" size="47.5%"> 
     </form>
