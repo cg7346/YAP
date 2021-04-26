@@ -1,3 +1,5 @@
 .DS_Store
 test.html
 src/artistPortfolio.js
+*.xml
+.idea/YAP.iml
