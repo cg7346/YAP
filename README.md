@@ -22,6 +22,17 @@ As for the structure of our application we decided to focus on the ease of use f
 - feedback.html - (Feedback Control)
 - search.html - (Job Search)
 
+## Prototype Updates
+Clicking on Hank's Smith's name also will now bring you to the artwork with the ability to control tthe feedback.
+
+The settings icon background on the artist portfolio page makes it more apealing to the end user. Also, included the ability to click on an artwork on the artists portfolio page that will bring users to a more detailed version of the project. While also removing the unnecessary use of Edit Projects link. 
+
+Upon clicking on 'POST A NEW ARTWORK' button users are redirected to an art submission page and now able to select a file from their local storage upon clicking browse.
+
+On the job submission page we have add more padding on the side of the filters to make the look of the site more professional and also users to easily see that the filter options.
+
+The overall navigation bar color has also been changed to make the site easier on our users eyes.
+
 ## Features
 Clicking on Hank Smith's first artwork will bring you to the ability to control the feedback on that artwork in which a user can see the options they would have over there own artwork. The implementation of deleting, reporting, and replying to comments is not yet implemented.
 
