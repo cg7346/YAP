@@ -41,7 +41,7 @@ The Employment option in the navigation will allow artists to search for job opp
 The Login option in the navigation will bring the artists to their portfolio page.
 Right now this shows an artists perspective of the site and the options they would have to customizae their portfolio. The save button of the options selected are yet to be implemented.
 
-From the artists portfolio page an artist can submit a new artwork at the bottom of the page that will bring you to the Art Submission page in which you can click continue to walkthrough the process of submitting adding a project to your portfolio. The functionality of uploading a file is yet to be implemented.
+From the artists portfolio page an artist can submit a new artwork at the bottom of the page that will bring you to the Art Submission page in which you can click continue to walkthrough the process of submitting adding a project to your portfolio.
 
 All other design features and fuctionality of the site is described below.
 
